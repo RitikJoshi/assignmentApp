@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Update Customer</title>
+</head>
+<body>
+<h1>Update Customer</h1>
+<form action="/customer/update/{uuid}" method="post">
+    <input type="hidden" name="uuid" th:value="${customer.uuid}">
+    <div>
+        <label for="first_name">First Name:</label>
+        <input type="text" id="first_name" name="first_name" th:value="${customer.first_name}" required>
+    </div>
+    <div>
+        <label for="last_name">Last Name:</label>
+        <input type="text" id="last_name" name="last_name" th:value="${customer.last_name}" required>
+    </div>
+    <div>
+        <label for="street">Street:</label>
+        <input type="text" id="street" name="street" th:value="${customer.street}">
+    </div>
+    <div>
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address" th:value="${customer.address}">
+    </div>
+    <div>
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" th:value="${customer.city}">
+    </div>
+    <div>
+        <label for="state">State:</label>
+        <input type="text" id="state" name="state" th:value="${customer.state}">
+    </div>
+    <div>
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" th:value="${customer.email}">
+    </div>
+    <div>
+        <label for="phone">Phone:</label>
+        <input type="text" id="phone" name="phone" th:value="${customer.phone}">
+    </div>
+    <button type="submit">Update</button>
+</form>
+</body>
+</html>

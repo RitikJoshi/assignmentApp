@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Customer List</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/customer-list.css}">
+</head>
+<body>
+<h1>Customer List</h1>
+<a class="button" th:href="@{/customer/show}">Add Customer</a>
+<table>
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Street</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Actions</th>
+    </tr>
+    <tr th:each="customer : ${list}">
+        <td th:text="${customer.first_name}"></td>
+        <td th:text="${customer.last_name}"></td>
+        <td th:text="${customer.street}"></td>
+        <td th:text="${customer.address}"></td>
+        <td th:text="${customer.city}"></td>
+        <td th:text="${customer.state}"></td>
+        <td th:text="${customer.email}"></td>
+        <td th:text="${customer.phone}"></td>
+        <td>
+            <a class="edit" th:href="@{/customer/update/{uuid}(uuid=${customer.uuid})}">Edit</a>
+            <a class="delete" th:href="@{/customer/delete/{uuid}(uuid=${customer.uuid})}">Delete</a>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
